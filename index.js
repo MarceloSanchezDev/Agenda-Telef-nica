@@ -37,8 +37,8 @@ app.post('/api/persons',(req,res)=> {
     }
   
     const person = new Person({
-      content: body.content,
-      important: body.important || false,
+      name: body.name,
+      number: body.number,
     })
   
     person.save().then(savedPerson => {
