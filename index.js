@@ -32,13 +32,13 @@ app.delete('/api/persons/:id',(req,res) => {
 
 app.post('/api/persons',(req,res)=> {
     const body = req.body
-    if (body.content === undefined) {
+    if (body.name === undefined) {
       return res.status(400).json({ error: 'content missing' })
     }
   
     const person = new Person({
-      name: body.name,
-      number: body.number,
+        name: body.name,
+        number: body.number,
     })
   
     person.save().then(savedPerson => {

@@ -1,5 +1,5 @@
 export const createContact = (contact) => {
-    return fetch('/api/persons',{
+    return fetch('http://localhost:3001/api/persons',{
         method: 'POST',
         body: JSON.stringify(contact),
         headers: {
@@ -7,5 +7,4 @@ export const createContact = (contact) => {
         },
       })
         .then((response) => response.json())
-        .then((json) => console.log(json));
 }
